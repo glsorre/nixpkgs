@@ -30,7 +30,7 @@ buildPythonPackage rec {
   format = "other";
 
   src = fetchurl {
-    url = "mirror://gnome/sources/${pname}/${lib.versions.majorMinor version}/${pname}-${version}.tar.gz";
+    url = "mirror://gnome/sources/pygobject/${lib.versions.majorMinor version}/pygobject-${version}.tar.gz";
     hash = "sha256-tmVvY0j1JFYGzxXqSMOEx/BRVsderSBsGyRsgKIvtYU=";
   };
 
@@ -63,8 +63,8 @@ buildPythonPackage rec {
 
   passthru = {
     updateScript = gnome.updateScript {
-      packageName = pname;
-      attrPath = "python3.pkgs.${pname}3";
+      packageName = "pygobject";
+      attrPath = "python3.pkgs.pygobject3";
       versionPolicy = "odd-unstable";
     };
   };
